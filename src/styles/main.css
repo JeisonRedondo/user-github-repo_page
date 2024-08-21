@@ -1,0 +1,8 @@
+#root {
+  min-width: 36px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #120907;
+  display: flex;
+  padding: 10px;
+}

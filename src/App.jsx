@@ -7,10 +7,14 @@ import Label from "./atoms/label.jsx";
 
 const StyledApp = styled.main`
   min-width: 36px;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
   background-color: #120907;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   padding: 10px;
 `;
 
@@ -19,9 +23,9 @@ function App() {
 
   return (
     <StyledApp>
-      <ButtonTest></ButtonTest>
       <Label></Label>
       <Input></Input>
+      <ButtonTest></ButtonTest>
     </StyledApp>
   );
 }
