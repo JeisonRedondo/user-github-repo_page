@@ -1,10 +1,8 @@
 //import { useState } from "react";
 import styled from "styled-components";
 
-import ButtonTest from "./atoms/button.jsx";
-import Input from "./atoms/input.jsx";
-import Label from "./atoms/label.jsx";
 import Navbar from "./organisms/Navbar.jsx";
+import UserQueryView from "./templates/user-query.jsx";
 
 const StyledApp = styled.main`
   min-width: 36px;
@@ -23,9 +21,7 @@ function App() {
   return (
     <StyledApp>
       <Navbar></Navbar>
-      <Label></Label>
-      <Input></Input>
-      <ButtonTest></ButtonTest>
+      <UserQueryView></UserQueryView>
     </StyledApp>
   );
 }

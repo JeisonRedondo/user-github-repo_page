@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledButton = styled.button`
   width: fit-content;
@@ -15,8 +16,12 @@ const StyledButton = styled.button`
   }
 `;
 
-function Button() {
-  return <StyledButton>Agregar</StyledButton>;
+function Button({ texto }) {
+  return <StyledButton>{texto}</StyledButton>;
 }
+
+Button.propTypes = {
+  texto: PropTypes.string.isRequired,
+};
 
 export default Button;
