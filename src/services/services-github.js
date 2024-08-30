@@ -27,9 +27,23 @@ async function githubUserRepo() {
     RepoArray.push(RepoObject);
   }
 
-  console.log(RepoArray);
-
   return RepoArray;
 }
 
-githubUserRepo();
+// Necesito una funcion que me filtre los nombres en base a los caracteres que puede
+// pasar el usuario
+
+async function filterTextRepo(query) {
+  const arrayRepos = await githubUserRepo();
+
+  const acceptedRepos = [];
+  arrayRepos.forEach((repo) => {
+    let nameRepo = repo.name.toLowerCase();
+    if (nameRepo.includes(query.toLowerCase())) {
+      acceptedRepos.push(repo);
+    }
+  });
+  console.log("Repos Aceptados: ", acceptedRepos);
+}
+
+filterTextRepo("css");
