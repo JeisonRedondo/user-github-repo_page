@@ -10,7 +10,7 @@ function Label({ children }) {
   return <StyledLabel>{children}</StyledLabel>;
 }
 
-Label.PropTypes = {
+Label.propTypes = {
   children: PropTypes.string.isRequired,
 };
 

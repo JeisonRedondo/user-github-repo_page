@@ -5,8 +5,8 @@ const StyledInput = styled.input`
   height: fit-content;
 `;
 
-function Input() {
-  return <StyledInput></StyledInput>;
+function Input(props) {
+  return <StyledInput {...props} />;
 }
 
 export default Input;

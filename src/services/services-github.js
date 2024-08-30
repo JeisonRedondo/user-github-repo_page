@@ -13,9 +13,7 @@ const githubUser = async (username) => {
   }
 };
 
-async function githubUserRepo() {
-  const respuesta = await githubUser("JeisonRedondo");
-
+function githubUserRepo(respuesta) {
   const RepoArray = [];
 
   for (let index = 0; index < respuesta.length; index++) {
@@ -33,8 +31,10 @@ async function githubUserRepo() {
 // Necesito una funcion que me filtre los nombres en base a los caracteres que puede
 // pasar el usuario
 
-async function filterTextRepo(query) {
-  const arrayRepos = await githubUserRepo();
+async function filterTextRepo(user, query) {
+  const respuesta = await githubUser(user);
+
+  const arrayRepos = githubUserRepo(respuesta);
 
   const acceptedRepos = [];
   arrayRepos.forEach((repo) => {
@@ -44,6 +44,8 @@ async function filterTextRepo(query) {
     }
   });
   console.log("Repos Aceptados: ", acceptedRepos);
+  return acceptedRepos;
 }
 
-filterTextRepo("css");
+//filterTextRepo("JeisonRedondo", "css");
+export default filterTextRepo;

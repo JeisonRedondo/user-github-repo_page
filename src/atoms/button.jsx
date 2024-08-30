@@ -16,12 +16,13 @@ const StyledButton = styled.button`
   }
 `;
 
-function Button({ texto }) {
-  return <StyledButton>{texto}</StyledButton>;
+function Button({ texto, onClick }) {
+  return <StyledButton onClick={onClick}>{texto}</StyledButton>;
 }
 
 Button.propTypes = {
   texto: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default Button;
