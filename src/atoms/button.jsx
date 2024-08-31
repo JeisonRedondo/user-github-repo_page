@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const StyledButton = styled.button`
   width: fit-content;
-  height: fit-content;
+  height: fit-content; 
   background-color: #008cba;
   color: white;
   padding: 10px 20px;
@@ -13,7 +13,7 @@ const StyledButton = styled.button`
 
   &:hover {
     background-color: #005f73;
-  }
+  bd }
 `;
 
 function Button({ texto, onClick }) {

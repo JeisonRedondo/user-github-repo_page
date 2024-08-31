@@ -17,9 +17,11 @@ function githubUserRepo(respuesta) {
   const RepoArray = [];
 
   for (let index = 0; index < respuesta.length; index++) {
+    const descRepo = respuesta[index].description;
+    const description = descRepo == null ? "No Description" : descRepo;
     let RepoObject = {
       name: respuesta[index].name,
-      description: respuesta[index].description,
+      description: description,
       url: respuesta[index].url,
     };
     RepoArray.push(RepoObject);
@@ -37,6 +39,7 @@ async function filterTextRepo(user, query) {
   const arrayRepos = githubUserRepo(respuesta);
 
   const acceptedRepos = [];
+
   arrayRepos.forEach((repo) => {
     let nameRepo = repo.name.toLowerCase();
     if (nameRepo.includes(query.toLowerCase())) {
@@ -44,7 +47,20 @@ async function filterTextRepo(user, query) {
     }
   });
   console.log("Repos Aceptados: ", acceptedRepos);
-  return acceptedRepos;
+
+  const responseRepo = {
+    response: false,
+    repos: [],
+  };
+
+  if (acceptedRepos.length > 0) {
+    responseRepo.response = true;
+    responseRepo.repos = acceptedRepos;
+  } else {
+    responseRepo.repos = arrayRepos;
+  }
+
+  return responseRepo;
 }
 
 //filterTextRepo("JeisonRedondo", "css");

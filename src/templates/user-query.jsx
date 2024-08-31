@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Label from "../atoms/label.jsx";
 import Input from "../atoms/input";
 import Button from "../atoms/button.jsx";
+import Card from "../organisms/card.jsx";
 
 import styled from "styled-components";
 
@@ -21,9 +22,19 @@ const StyledDiv = styled.div`
   gap: 10px;
 `;
 
+const StyledDiv2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
+
 function UserQueryView() {
   const [userInput, setUserInput] = useState("");
   const [queryInput, setQueryInput] = useState("");
+  const [reposContainer, setReposContainer] = useState([]);
+  const [findRepos, setFindRepos] = useState();
 
   useEffect(() => {
     const storedUserInput = localStorage.getItem("userSearched");
@@ -49,9 +60,11 @@ function UserQueryView() {
 
     console.log("Oprimiendo boton");
     try {
-      const repos = await filterTextRepo(userInput, queryInput);
+      const responseFilter = await filterTextRepo(userInput, queryInput);
+      setReposContainer(responseFilter.repos);
+      setFindRepos(responseFilter.response);
       console.log(`User: ${userInput}, query: ${queryInput}`);
-      console.log("Repos: ", repos);
+      console.log("Repos: ", responseFilter);
     } catch (err) {
       throw new Error("Este es el error: ", err);
     }
@@ -60,6 +73,22 @@ function UserQueryView() {
   const onClickReset = () => {
     localStorage.removeItem("userSearched");
     localStorage.removeItem("querySearched");
+  };
+
+  const onClickCard = () => {
+    console.log("Click en card");
+  };
+
+  const renderCards = () => {
+    return reposContainer.map((repo) => (
+      <Card
+        key={repo.name}
+        name={repo.name}
+        desc={repo.description}
+        url={repo.url}
+        onClick={onClickCard}
+      ></Card>
+    ));
   };
 
   return (
@@ -75,7 +104,11 @@ function UserQueryView() {
         </StyledArticle>
       </StyledDiv>
       <Button texto="Search" onClick={onClickButton}></Button>
-      <Button texto="Reset" onClick={onClickReset}></Button>
+      <container>
+        {findRepos == true ? true : <p>No matches found</p>}
+        <StyledDiv2>{renderCards()}</StyledDiv2>
+        <Button texto="Reset" onClick={onClickReset}></Button>
+      </container>
     </>
   );
 }
