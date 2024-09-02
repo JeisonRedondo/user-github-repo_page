@@ -10,11 +10,11 @@ Hola Jeison aqui pondremos nuestros pasos para generar la aplicación de manera 
 
 - [x] (Funcionalidad) Empezar a implementar la api de github y hacer pruebas.
   - [x] Agregar el guardado en localstorage.
-- [] (Diseño) Agregar detalles de Estilo tipo Github.
+- [x] (Diseño) Agregar detalles de Estilo tipo Github.
   - [x] Agregar cards para mostrar los repositorios.
   - [x] Agregar el response para cuando no encuentre los repos.
-  - [] Generar bordes para los contenedores.
-  - [] Agregar extras para los lados.
+  - [x] Generar bordes para los contenedores.
+  - [x] Agregar extras para los lados.
 
 ## Partes desarrolladas
 

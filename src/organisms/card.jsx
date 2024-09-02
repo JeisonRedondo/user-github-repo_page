@@ -2,40 +2,43 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledArticle = styled.article`
+  width: 200px;
   border: 2px solid grey;
   border-radius: 10px;
-  padding: 2px 12px;
-  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 0;
 `;
 
 const StyledSpan = styled.span`
   color: #3fe0d2;
+  margin: 0;
 `;
 
 const StyledP = styled.p`
   color: #e93bba;
   overflow-wrap: break-word;
   text-decoration: none;
+  margin: 0;
 `;
 
 function Card({ name, desc, url, onClick }) {
   return (
     <StyledArticle onClick={onClick}>
-      <p alt="Repo Name">
-        {" "}
+      <>
         <StyledSpan>Repositorio :</StyledSpan>
-        {name}
-      </p>
-      <p alt="Repo Description">
-        {" "}
+        <p alt="Repo Name">{name}</p>
+      </>
+      <>
         <StyledSpan>Description: </StyledSpan>
-        {desc}
-      </p>
-      <StyledP>
-        {" "}
+        <p alt="Repo Description">{desc}</p>
+      </>
+      <>
         <StyledSpan>Url: </StyledSpan>
-        {url}
-      </StyledP>
+        <StyledP>{url}</StyledP>
+      </>
     </StyledArticle>
   );
 }

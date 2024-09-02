@@ -24,6 +24,7 @@ const StyledDiv = styled.div`
 
 const StyledDiv2 = styled.div`
   display: flex;
+  margin: 0;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
@@ -75,8 +76,9 @@ function UserQueryView() {
     localStorage.removeItem("querySearched");
   };
 
-  const onClickCard = () => {
-    console.log("Click en card");
+  const onClickCard = (url) => {
+    console.log("Redirigiendo a: ", url);
+    window.location.href = url;
   };
 
   const renderCards = () => {
@@ -85,8 +87,10 @@ function UserQueryView() {
         key={repo.name}
         name={repo.name}
         desc={repo.description}
-        url={repo.url}
-        onClick={onClickCard}
+        url={`https://github.com/${userInput}/${repo.name}`}
+        onClick={() =>
+          onClickCard(`https://github.com/${userInput}/${repo.name}`)
+        }
       ></Card>
     ));
   };
@@ -104,11 +108,12 @@ function UserQueryView() {
         </StyledArticle>
       </StyledDiv>
       <Button texto="Search" onClick={onClickButton}></Button>
-      <container>
+      <Button texto="Reset User" onClick={onClickReset}></Button>
+
+      <>
         {findRepos == true ? true : <p>No matches found</p>}
         <StyledDiv2>{renderCards()}</StyledDiv2>
-        <Button texto="Reset" onClick={onClickReset}></Button>
-      </container>
+      </>
     </>
   );
 }

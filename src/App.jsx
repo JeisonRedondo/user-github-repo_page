@@ -6,13 +6,15 @@ import UserQueryView from "./templates/user-query.jsx";
 
 const StyledApp = styled.main`
   min-width: 36px;
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
+  width: 90vw;
+  margin: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
 `;
 
 function App() {

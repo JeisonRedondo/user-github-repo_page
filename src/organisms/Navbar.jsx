@@ -10,6 +10,7 @@ const StyledNavbar = styled.nav`
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Ajusta la opacidad según necesites */
+  background-color: #010409;
 `;
 
 function Navbar() {
