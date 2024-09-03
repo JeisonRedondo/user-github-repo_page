@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledArticle = styled.article`
-  width: 200px;
+  width: 300px;
   border: 2px solid grey;
   border-radius: 10px;
 

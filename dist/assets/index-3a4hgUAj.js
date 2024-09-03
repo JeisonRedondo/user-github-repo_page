@@ -54,21 +54,23 @@ Error generating stack: `+i.message+`
 `;function Ns({children:e}){return j.jsx(j0,{children:e})}Ns.propTypes={children:en.string.isRequired};const I0=He.input`
   width: fit-content;
   height: fit-content;
+  font-size: 22px;
 `;function pc(e){return j.jsx(I0,{...e})}const D0=He.button`
-  width: fit-content;
-  height: fit-content; 
+  min-width: fit-content;
+  min-height: fit-content; 
   background-color: #008cba;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size:24px;
 
   &:hover {
     background-color: #005f73;
   bd }
 `;function Ts({texto:e,onClick:t}){return j.jsx(D0,{onClick:t,children:e})}Ts.propTypes={texto:en.string.isRequired,onClick:en.func};const F0=He.article`
-  width: 200px;
+  width: 300px;
   border: 2px solid grey;
   border-radius: 10px;
 
