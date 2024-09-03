@@ -74,10 +74,6 @@ npm run predeploy
 npm run deploy
 ```
 
-## Despliegue
-
-El proyecto está desplegado en Netlify. También puedes desplegarlo en GitHub Pages utilizando el comando npm run deploy, que usa el paquete gh-pages.
-
 ## Contribuciones
 
 Si deseas contribuir al proyecto, por favor sigue estos pasos:
@@ -112,4 +108,4 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE
 ## Contacto
 
 Nombre: Jeison Redondo
-GitHub: JeisonRedondo
+GitHub: [JeisonRedondo](https://github.com/JeisonRedondo)
