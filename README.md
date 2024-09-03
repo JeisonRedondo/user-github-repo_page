@@ -65,14 +65,9 @@ Ejecuta ESLint para verificar el código fuente en busca de problemas.
 npm run lint
 ```
 
-- **Despliegue:**
+## Despliegue
 
-Prepara el proyecto para el despliegue y despliega en GitHub Pages usando gh-pages.
-
-```bash
-npm run predeploy
-npm run deploy
-```
+El proyecto está desplegado en [Netlify](https://user-github-page.netlify.app/).
 
 ## Contribuciones
 
